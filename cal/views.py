@@ -10,7 +10,7 @@ def GoogleCalendarInitView(request):
     
     #Flow object will handle auth process
     flow = Flow.from_client_secrets_file(
-        'config/abc.json',
+       '/secretFilePath',
         #Defining the scopes
         scopes=['https://www.googleapis.com/auth/calendar.readonly'],
         #Redirect uri after permission granted
@@ -29,7 +29,7 @@ def GoogleCalendarRedirectView(request):
     state = request.session.pop('oauth_state', '')
     
     flow = Flow.from_client_secrets_file(
-        'config/abc.json',
+        '/secretFilePath',
         scopes=['https://www.googleapis.com/auth/calendar.readonly'],
         redirect_uri='http://localhost:8000/rest/v1/calendar/redirect/',
         state=state
