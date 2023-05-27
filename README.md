@@ -1,1 +1,1 @@
-# django-google_calender_oauth2
+# Google Calender OAuth2 using Django
